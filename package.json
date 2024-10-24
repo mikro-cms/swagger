@@ -1,6 +1,6 @@
 {
   "name": "@mikrocms/swagger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Package swagger ui mikrocms",
   "main": "index.js",
   "scripts": {
