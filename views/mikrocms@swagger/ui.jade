@@ -36,25 +36,25 @@ html(lang="en")
           }
         });
 
-        window.ui = ui;
-
         function addServers() {
           try {
             const servers = !{JSON.stringify(swaggerServers)};
-            const domSelect = document.querySelector('.servers select');
 
-            const selects = document.createDocumentFragment();
+            let spec = ui.specSelectors.specJson().toJS();
+            let specAdded = 0;
 
             for (var server of servers) {
-              const option = document.createElement('option');
-              
-              option.value = server.url;
-              option.innerHTML = `${server.url} - ${server.description}`;
+              if (spec.servers.some(s => s.url === server.url)) {
+                continue;
+              }
 
-              selects.appendChild(option);
+              spec.servers.push(server);
+              specAdded += 1;
             }
 
-            domSelect.appendChild(selects);
+            if (specAdded) {
+              ui.specActions.updateSpec(JSON.stringify(spec))
+            }
           } catch (err) {
             console.error(`could not modified servers ${err}`)
           }
