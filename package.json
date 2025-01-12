@@ -1,6 +1,6 @@
 {
   "name": "@mikrocms/swagger",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "description": "Package swagger ui mikrocms",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/mikrocms/swagger#readme",
   "dependencies": {
-    "@mikrocms/core": "^1.0.0"
+    "@mikrocms/core": "^1.2.2"
   }
 }
